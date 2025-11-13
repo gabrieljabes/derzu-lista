@@ -30,7 +30,7 @@ if(d1.ano < d2.ano){
     d2d1 = true;
     } else if(d1.mes < d2.mes){
         d1d2 = true;
-    } else if(d2.mes < d2.mes){
+    } else if(d2.mes < d1.mes){
         d2d1 = true;
      } else if(d1.dia < d2.dia){
         d1d2 = true;
@@ -68,12 +68,12 @@ cin >> d2.ano;
     
     int resp = mais_velho(d1, d2);
 
-    cout << resp;
-
     if(resp == 1){
         cout << "Pessoa 1 é mais velha" << endl;
     } else if(resp == -1){
         cout << "Pessoa 2 é mais velha" << endl;
+    } else if(resp == 0){
+        cout << "Pessoas são da mesma idade" << endl;
     }
 
     return 0;
