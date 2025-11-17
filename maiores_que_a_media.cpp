@@ -20,7 +20,6 @@ for(int i = 0; i < nums.size(); i++){
 
 media /= nums.size();
 
-
 cout << "Media: " << media << endl;
 cout << "Maiores que a media: ";
 for(int i = 0; i < nums.size(); i++){

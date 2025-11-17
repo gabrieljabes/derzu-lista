@@ -11,8 +11,6 @@ Preço;
 Escreva um programa no qual o usuário informa os dados de dois veículos, sendo impresso ao final o modelo e marca do veículo mais antigo.
 Caso ambos os veículos tenham sido fabricados no mesmo ano, informe a marca e o modelo do veículo mais barato.*/
 
-
-
 typedef struct{
     string modelo;
     string marca;
@@ -31,7 +29,6 @@ int main(){
     cadastrar_v(&c1);
     cadastrar_v(&c2);
 
-    
     comparar_v(&c1, &c2);
 
     return 0;
@@ -39,7 +36,7 @@ int main(){
 
 void imprimir_v(veiculo *c){
     cout << c->marca << " " << c->modelo << endl;
-    cout << c->ano << " " << c->custo << endl;
+   // cout << c->ano << " " << c->custo << endl;
 }
 
 void cadastrar_v(veiculo *c){
@@ -65,6 +62,5 @@ void comparar_v(veiculo *c, veiculo *d){
         else if(d->custo < c->custo){
             imprimir_v(d);
         }
-    }
-    
+    }   
 }

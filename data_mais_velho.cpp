@@ -11,13 +11,11 @@ data mais antiga. */
 
 using namespace std;
 
-
 typedef struct{
     int dia;
     int mes;
     int ano;
 }data_;
-
 
 int mais_velho(data_ d1, data_ d2){
     bool d1d2;
