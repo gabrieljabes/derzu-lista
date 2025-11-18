@@ -43,7 +43,6 @@ void ponto_proximo(Ponto referencial, vector <Ponto> pontos){
         }
     }
 
-    
     // cout << "vetor de distâncias:" << endl;
     // for (i = 0; i < pontos.size(); i++){
     //     if(i < pontos.size()-1){
@@ -57,7 +56,6 @@ void ponto_proximo(Ponto referencial, vector <Ponto> pontos){
     // cout << "i_m: " << i_m << endl;
     
     cout << "Ponto mais perto é (" << pontos.at(i_m).x << ", " << pontos.at(i_m).y << ")" << endl;
-
 }
 
 int main(){
@@ -75,8 +73,6 @@ int main(){
     }
 
     ponto_proximo(p, pontos);
-
-
 
     return 0;
 }
