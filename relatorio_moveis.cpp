@@ -9,6 +9,8 @@ struct Movel{
     float peso;
     char tipo;
 };
+
+
 A partir desta estrutura, escreva um programa no qual o usuário cadastra n móveis, imprimindo ao final do cadastro um relatório informando:
 Qual a descrição do móvel mais pesado;
 ​Quantos móveis acima de 10Kg são do tipo 's';​
@@ -37,12 +39,10 @@ int main(){
     for(int i = 0; i < n; i++){
         cadastrar_moveis(&moveis.at(i));
     }
-
     
     cout << "Tipo 's' acima de 10Kg: " << quant_s10kg(moveis) << endl;
     cout << "Termina em \"Real\": " << quant_reais(moveis) << endl;
-    cout << "Mais pesado: " << mais_pesado(moveis) << endl;
-
+    cout << "Mais pesado: \"" << mais_pesado(moveis) << "\"" << endl;
 
     return 0;
 }

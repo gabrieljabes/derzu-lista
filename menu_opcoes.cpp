@@ -21,8 +21,12 @@ int main(){
     do{
         exibirMenu(quant_itens);
         cin >> opcao;
-        if(opcao == 4)
+        if(opcao == 4){
+            cout << "Sair" << endl;
             return 0;
+        }
+        else if(opcao > quant_itens)
+            cout << "Opcao " << opcao << " Invalida" << endl;
         else
             exibirItem(opcao);
     } while (opcao != 4);
