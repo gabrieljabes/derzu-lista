@@ -44,8 +44,8 @@ bool razaoMatriz(vector <vector<int>> *matriz){
     size_t m{matriz->size()};
     size_t n{matriz->at(0).size()};
 
-    for(size_t i = 0; i < m; i++)
-        for(size_t j = 0; j < n; j++)
+    for(int i = 0; i < m; i++)
+        for(int j : matriz->at(i))
             if(matriz->at(i).at(j) == 0)
                 count_0++;
 
