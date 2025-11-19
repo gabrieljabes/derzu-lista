@@ -17,7 +17,7 @@ com a resposta da função.
 A matriz tem largura/altura
 máximas igual a 10.*/
 
-float razaoMatriz(vector <vector<int>> *matriz);
+bool razaoMatriz(vector <vector<int>> *matriz);
 void preencherMatriz(vector <vector<int>> *matriz);
 
 int main(){
@@ -30,11 +30,8 @@ int main(){
 
     preencherMatriz(&matriz);
 
-    float razao = razaoMatriz(&matriz);
-    
-    cout << razao << endl;
-
-    if(razao > 0.7)
+    bool esparsa = razaoMatriz(&matriz);
+    if(esparsa == true)
         cout << "A matriz é esparsa" << endl;
     else
         cout << "A matriz não é esparsa" << endl;
@@ -42,7 +39,7 @@ int main(){
     return 0;
 }
 
-float razaoMatriz(vector <vector<int>> *matriz){
+bool razaoMatriz(vector <vector<int>> *matriz){
     int count_0{};
     size_t m{matriz->size()};
     size_t n{matriz->at(0).size()};
@@ -52,7 +49,10 @@ float razaoMatriz(vector <vector<int>> *matriz){
             if(matriz->at(i).at(j) == 0)
                 count_0++;
 
-    return (float)count_0/(m * n);
+    if((float)count_0/(m * n) > 0.7)
+        return true;
+    else
+        return false;
 }
 
 void preencherMatriz(vector <vector<int>> *matriz){
