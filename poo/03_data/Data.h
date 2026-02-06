@@ -81,16 +81,16 @@ class Data{
         std::string stringDataAno;
 
         if(d_dia == false)
-            std::string stringDataDia = "0" + (std::to_string(getDia()));
+            stringDataDia = "0" + (std::to_string(getDia()));
         else
-            std::string stringDataDia = (std::to_string(getDia()));
+            stringDataDia = (std::to_string(getDia()));
 
          if(d_mes == false)
-            std::string stringDataMes = "0" + (std::to_string(getMes()));
+            stringDataMes = "0" + (std::to_string(getMes()));
         else
-            std::string stringDataMes = (std::to_string(getMes()));
+            stringDataMes = (std::to_string(getMes()));
 
-        std::string stringDataAno = (std::to_string(getAno()));
+            stringDataAno = (std::to_string(getAno()));
         
         std::string stringData = stringDataDia + "/" + stringDataMes + "/" + stringDataAno;
 
