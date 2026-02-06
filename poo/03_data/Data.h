@@ -1,8 +1,6 @@
-
 #include <string>
 #include <vector>
 #include <iostream>
-#pragma once
 
 class Data{
     private:
@@ -11,6 +9,8 @@ class Data{
     public:
     
     Data(int d, int m, int a){
+        if((a % 4 == 0 && a % 100 != 0) || (a % 400 == 0))
+            diaLimite[1] = 29;
         int itMes = m - 1;
         if(itMes < diaLimite.size()){
             if(d > diaLimite[itMes] || d <= 0){
@@ -72,17 +72,32 @@ class Data{
         }
     }
     
-    void exibirData(){
+
+    std::string toStringData(){
         bool d_dia = (dia >= 10);
         bool d_mes = (mes >= 10);
+        std::string stringDataDia;
+        std::string stringDataMes;
+        std::string stringDataAno;
 
         if(d_dia == false)
-            std::cout << "0";
-        std::cout << dia << "/";
+            std::string stringDataDia = "0" + (std::to_string(getDia()));
+        else
+            std::string stringDataDia = (std::to_string(getDia()));
 
-        if(d_mes == false)
-            std::cout << "0";
-        std::cout << mes << "/" << ano << std::endl;
+         if(d_mes == false)
+            std::string stringDataMes = "0" + (std::to_string(getMes()));
+        else
+            std::string stringDataMes = (std::to_string(getMes()));
 
+        std::string stringDataAno = (std::to_string(getAno()));
+        
+        std::string stringData = stringDataDia + "/" + stringDataMes + "/" + stringDataAno;
+
+        return stringData;
+    }
+    
+    void exibirData(){
+        std::cout << toStringData() << std::endl;
     }
 };
