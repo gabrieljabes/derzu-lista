@@ -1,4 +1,5 @@
 #include "TrabalhadorPorHora.h"
+#include "TrabalhadorAssalariado.h"
 
 int main(){
     int N;
@@ -6,34 +7,35 @@ int main(){
     std::string nome;
     float s;
     float valorHora;
+    float hrsSemanais;
 
 
     std::cin >> N;
-    std::cin >> tipo;
 
     std::vector <Trabalhador*> trabalhadores;
 
     for(int i = 0; i < N; i++){
+        std::cin >> tipo;
+        std::cin.ignore();
     switch(tipo){
         case 1:
-        {
-            std::cin >> s;
-            std::cin.ignore();
+        {   
             std::getline(std::cin, nome);
-            TrabalhadorAssalariado t(s);
-            t.setNome(nome);
-
-            trabalhadores.push_back(&t);
+            std::cin >> s;
+            trabalhadores.push_back(new TrabalhadorAssalariado(s));
+            trabalhadores[i]->setNome(nome);
             break;
            }
         case 2:
         {
-            std::cin >> valorHora;
-            std::cin.ignore();
             std::getline(std::cin, nome);
-            TrabalhadorPorHora t(s);
-            t.setNome(nome);
-            trabalhadores.push_back(&t);
+            std::cin >> valorHora;
+            std::cin >> hrsSemanais;
+
+            auto* th = new TrabalhadorPorHora(valorHora);
+            th->setHorasSemanais(hrsSemanais);
+            trabalhadores.push_back(th);
+            trabalhadores[i]->setNome(nome);
             break;
         }
     }
@@ -43,5 +45,9 @@ int main(){
         std::cout << trabalhadores[i]->getNome() << " - Semanal: R$ " << trabalhadores[i]->calcularPagamentoSemanal() << 
         " - Mensal: R$ " << trabalhadores[i]->getSalario() << std::endl;
     }
+
+    for (auto t : trabalhadores)
+    delete t;
+
     return 0;
 }

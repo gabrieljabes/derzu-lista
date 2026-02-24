@@ -7,7 +7,7 @@ class TrabalhadorAssalariado : public Trabalhador{
         setSalario(s);
     }
 
-    float calcularPagamentoSemanal(){
+    float calcularPagamentoSemanal() override{
         return salario/4;
     }
 };

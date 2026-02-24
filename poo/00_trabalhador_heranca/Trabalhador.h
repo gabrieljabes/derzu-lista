@@ -1,3 +1,4 @@
+#pragma once
 
 #include <string>
 #include <iostream>
@@ -12,6 +13,8 @@ class Trabalhador{
     Trabalhador(){
         salario = 0;
     }
+     
+    virtual ~Trabalhador() = default;
 
     std::string getNome(){
         return nome;
@@ -28,7 +31,7 @@ class Trabalhador{
     void setSalario(float salario){
         this->salario = salario;
     }
-    float calcularPagamentoSemanal(){
+    virtual float calcularPagamentoSemanal(){
         return 0;
-    }
+    };
 };
