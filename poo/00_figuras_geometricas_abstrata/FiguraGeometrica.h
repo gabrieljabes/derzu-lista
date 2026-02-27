@@ -9,16 +9,18 @@ class FiguraGeometrica{
     FiguraGeometrica(int tipo){
         this->tipo = tipo;
     }
-    virtual float calcularArea(){
-        return 0;
-    }
-    virtual void lerAtributoArea(){}
+
+    virtual ~FiguraGeometrica() {}
+
+    virtual float calcularArea() = 0;
+    virtual void lerAtributoArea() = 0;
+
     std::string getNome(){
         switch(tipo){
-            case 1: return "Quadrado";
-            case 2: return "Retângulo";
-            case 3: return "Triângulo";
-            case 4: return "Círculo";
+            case 1: return "Quadrado polimórfico";
+            case 2: return "Retângulo polimórfico";
+            case 3: return "Triângulo polimórfico";
+            case 4: return "Círculo polimórfico";
             default: return "Indefinido";
         }
     }
